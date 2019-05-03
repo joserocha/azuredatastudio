@@ -1391,4 +1391,9 @@ export class ConnectionManagementService extends Disposable implements IConnecti
 		}
 		return Promise.resolve(undefined);
 	}
+
+	public getProviderProperties(providerName: string): ConnectionProviderProperties {
+		let connectionProvider = this._providers.get(providerName);
+		return connectionProvider && connectionProvider.properties;
+	}
 }
